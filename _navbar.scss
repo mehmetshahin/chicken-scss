@@ -1,0 +1,81 @@
+@import "colors";
+@import "media-queries";
+
+½align-center{
+    display: flex;
+    align-items: center;
+}
+
+.navbar{
+    background-color:$light;
+    height:80px;
+    display:flex;
+    justify-content: space-between;
+    padding: 10px;
+    z-index: 10;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0.7,0.7,0.7,0.7);
+
+    &_logo{
+        color:$dark;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 2rem;
+        margin-left: 20px;
+        @extend ½align-center;
+    }
+
+    &_bars{
+        opacity: 0;
+
+        @include tablet{
+            color: $dark;
+            opacity: 1;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+        }
+    }
+    &_menu{
+        @extend ½align-center;
+        text-align: center;
+        margin-right: 20px;
+
+        @include tablet{
+            display: none;
+        }
+        ul{
+            list-style: none;
+            @extend ½align-center;
+            justify-content: center;
+        }
+        &-links{
+            color: $dark;
+            @extend ½align-center;
+            justify-content: center;
+            text-decoration: none;
+            padding: 0 1rem;
+
+            &:hover{
+                color: $lime;
+                transition: all 0.3s ease;
+            }
+        }
+    }
+
+}
+
+#buton{
+    padding: 10px 20px;
+    background-color: $lime;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    margin-left: 15px;
+    color: $light;
+    &:hover{
+        background-color: $orangered;
+        transition: all 0.3s ease;
+    }
+}
